@@ -1,0 +1,218 @@
+<!-- Project Template -->
+<style>
+  /* Import a clean modern font */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+
+  .work__box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto 60px;
+    padding: 40px 20px;
+    max-width: 1200px;
+
+    /* Glassmorphism style */
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Back button */
+  .back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(-90deg);
+    z-index: 999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .back-button__image {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 6px rgba(255, 50, 88, 0.6));
+  }
+
+  .back-button:hover .back-button__image {
+    transform: scale(1.1) rotate(-90deg);
+    filter: drop-shadow(0 0 8px rgba(255, 50, 88, 1));
+  }
+
+  /* Text section */
+  .work__text h3 {
+    margin-top: 0;
+    color: rgba(255, 50, 88, 0.996);
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .work__text p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    max-width: 900px;
+  }
+
+  .work__links a {
+    display: inline-block;
+    margin-right: 12px;
+    text-decoration: none;
+    color: rgba(255, 50, 88, 0.996);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: rgba(255, 50, 88, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .work__links a:hover {
+    color: white;
+    background: rgba(255, 50, 88, 0.9);
+    box-shadow: 0 4px 12px rgba(255, 50, 88, 0.5);
+  }
+
+  /* Carousel wrapper */
+  .carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .carousel img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+  }
+
+  .carousel img.active {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Buttons */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30, 30, 30, 0.6);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(255, 50, 88, 0.9);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .carousel-btn.prev {
+    left: 12px;
+  }
+
+  .carousel-btn.next {
+    right: 12px;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .work__text h3 {
+      font-size: 1.6rem;
+    }
+
+    .work__text p {
+      font-size: 0.95rem;
+    }
+
+    .work__box {
+      padding: 20px 15px;
+    }
+  }
+</style>
+
+<div class="work__box">
+  <!-- Text Section -->
+  <div class="work__text">
+    <h3>Stock Tracker</h3>
+    <p>
+        "Delivers daily portfolio performance updates straight to my phone at both the opening and closing of the US stock market. Each weekday it sends a notification to my phone showing my total unrealised return, the highest mover of the day among my stocks, and the overall value of my portfolio, ensuring I always have a clear, up-to-date snapshot of my investments wherever I am. The Hosted Webpage and allows me to log in from any device to record stock purchases or sales and instantly view an overview of my holdings. It’s hosted on PythonAnywhere, with CronJobs handling the scheduling, and Pushover to send notifications."
+    </p>
+
+    <!-- Links -->
+    <div class="work__links">
+      <a href="https://youtube.com" target="_blank">YouTube →</a>
+      <a href="https://twitch.tv" target="_blank">Twitch →</a>
+      <a href="https://tiktok.com" target="_blank">TikTok →</a>
+    </div>
+  </div>
+
+  <!-- Carousel Section -->
+  <div class="work__image-box">
+    <div class="carousel">
+      <img src="./images/project2-1.png" class="carousel-image active" alt="Project Image 1" />
+      <img src="./images/project2-2.png" class="carousel-image" alt="Project Image 2" />
+      <img src="./images/project2-3.png" class="carousel-image" alt="Project Image 3" />
+      <img src="./images/project2-4.png" class="carousel-image" alt="Project Image 4" />
+
+      <!-- Buttons -->
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+
+    <a href="#" class="back-button" title="Back to Portfolio">
+      <img src="./images/arrow-up.svg" alt="Back" class="back-button__image"/>
+    </a>
+  </div>
+</div>
+
+<!-- Carousel Script -->
+<script>
+  (function() {
+    const carousel = document.querySelector('.carousel');
+    const images = carousel.querySelectorAll('.carousel-image');
+    let currentIndex = 0;
+
+    const showImage = index => {
+      images.forEach(img => img.classList.remove('active'));
+      images[index].classList.add('active');
+    };
+
+    // Manual navigation
+    carousel.querySelector('.prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    carousel.querySelector('.next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    // Auto-slide every 4 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }, 4000);
+
+    showImage(currentIndex);
+  })();
+</script>
