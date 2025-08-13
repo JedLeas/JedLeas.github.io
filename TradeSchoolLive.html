@@ -11,6 +11,29 @@
     max-width: 100%;
   }
 
+  .back-button {
+  position: fixed;
+  top: 50%; /* vertically centered */
+  left: 20px; /* adjust distance from left */
+  transform: translateY(-50%) rotate(-90deg); /* rotate arrow 90 degrees counter-clockwise */
+  z-index: 999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button__image {
+  width: 40px; /* same size as your back-to-top image */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover .back-button__image {
+  transform: scale(1.1) rotate(-90deg); /* slightly enlarge on hover */
+}
+
+
   .work__text h3 {
     margin-top: 0;
     color: rgba(255, 50, 88, 0.996);
@@ -110,6 +133,10 @@
       <button class="carousel-btn prev">&#10094;</button>
       <button class="carousel-btn next">&#10095;</button>
     </div>
+    <a href="#" class="back-button" title="Back to Portfolio">
+  <img src="./images/arrow-up.svg" alt="Back" class="back-button__image"/>
+</a>
+
   </div>
 
 </div>
