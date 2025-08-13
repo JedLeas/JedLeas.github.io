@@ -69,29 +69,34 @@
     margin-bottom: 4px;
   }
 
-  /* Back button */
   .back-button {
     position: fixed;
-    bottom: 20px;
+    top: 80%;
     left: 20px;
-    transform: rotate(-90deg);
+    transform: translateY(-50%);
     z-index: 999;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 50, 88, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .back-button__image {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0 0 6px rgba(255, 50, 88, 0.6));
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
   }
 
-  .back-button:hover .back-button__image {
-    transform: scale(1.1) 
-    filter: drop-shadow(0 0 8px rgba(255, 50, 88, 1));
+  .back-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(255, 50, 88, 0.6);
   }
 
   /* Mobile adjustments */
