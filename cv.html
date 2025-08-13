@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jed Leas - CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+
+  .cv-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  h1, h2 {
+    color: rgba(255, 50, 88, 0.996);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+  }
+
+  p, li {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  a {
+    color: rgba(255, 50, 88, 0.996);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Contact section */
+  .contact-info {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  .contact-info span {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Back button */
+  .back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(-90deg);
+    z-index: 999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .back-button__image {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 6px rgba(255, 50, 88, 0.6));
+  }
+
+  .back-button:hover .back-button__image {
+    transform: scale(1.1) 
+    filter: drop-shadow(0 0 8px rgba(255, 50, 88, 1));
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .cv-container {
+      padding: 20px;
+      margin: 20px;
+    }
+    h1 {
+      font-size: 1.6rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cv-container">
+  <h1>Jed Leas</h1>
+  <div class="contact-info">
+    <span>Email: <a href="mailto:jedleas@outlook.com">jedleas@outlook.com</a></span>
+    <span>Phone: +44 7774 466054</span>
+    <span>LinkedIn: <a href="https://www.linkedin.com/in/jed-leas" target="_blank">linkedin.com/in/jed-leas</a></span>
+  </div>
+
+  <h2>Education</h2>
+  <ul>
+    <li><strong>University of Exeter</strong>, BSc Computer Science & BA Economics (2024–Present)
+      <ul>
+        <li>Subjects: Fundamentals of Machine Learning, Economics I, Programming, Mathematics for Economists</li>
+      </ul>
+    </li>
+    <li><strong>Advanced Placement</strong>, Stamford American International School, Singapore (2022–2024)
+      <ul>
+        <li>G12: AP Computer Science A (5), AP Macroeconomics (5), AP Calculus AB (5), AP Statistics (4)</li>
+        <li>G11: AP Computer Science Principles (5), AP Microeconomics (5), AP Physics 1 (5), PreCalculus (5)</li>
+      </ul>
+    </li>
+    <li><strong>Stamford Courses</strong>, Stamford American International School, Singapore (2022–2024)
+      <ul>
+        <li>G12: Spanish 3 (6), Contemporary English (7)</li>
+        <li>G11: Spanish SIELE A2 (5), Contemporary English (6)</li>
+      </ul>
+    </li>
+    <li><strong>Academic Awards</strong>: AP Subject Awards (Microeconomics, CS Principles, CS A, Statistics), Dean’s List (2023, 2024), Certificate of Service (2024)</li>
+    <li><strong>SAT</strong> (Nov 2023): 1400 (R&W: 680, Math: 720)</li>
+    <li><strong>Imperial College London</strong> (2022): Physics Global Summer School</li>
+  </ul>
+
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>Artico (Non-Profit) Website Designer</strong> (2023) – Led a team of 4 to develop an e-commerce site.</li>
+    <li><strong>Sales Representative</strong>, SneakerLab @ Sneaker Con SEA (2022–2024) – Customer engagement, product demonstrations.</li>
+    <li><strong>Sales Support</strong>, Skelcore (2020–2024) – Supported photoshoots and marketing in SE Asia.</li>
+    <li><strong>Leader</strong>, Mentoring Initiative (2023–2024) – Organized grade-wide events.</li>
+    <li><strong>Founder / Tutor</strong>, Calculus Study Group (2023–2024) – Tutored advanced calculus topics.</li>
+    <li><strong>Physics Honor Society</strong> – Founding Member, Tutoring Coordinator.</li>
+    <li><strong>Joyful Hearts</strong> – Member Chair (2023–2024), elderly care volunteering.</li>
+    <li><strong>Advisory Ambassador</strong> (2020–2024) – Academic/social event planning.</li>
+  </ul>
+
+  <h2>Charitable Work & Extracurriculars</h2>
+  <ul>
+    <li>Self-Trader in Stock Market (2020–Present)</li>
+    <li>Google Developer Student Club Exeter (2024–Present)</li>
+    <li>Student Investment Fund (2024–Present)</li>
+    <li>National Honors Society (2023–2024)</li>
+    <li>Economics Honor Society (2022–2024)</li>
+    <li>National Economics & Financial Management Challenge (2023) – Finalist</li>
+    <li>Interact Club (2020–2024)</li>
+    <li>Varsity Softball (2023–2024)</li>
+    <li>Relay For Life (2022)</li>
+  </ul>
+
+  <h2>Skills & Languages</h2>
+  <ul>
+    <li>Python, Scikit-learn, Java, JavaScript</li>
+    <li>Investing, Blender, DaVinci Resolve, Adobe Photoshop</li>
+    <li>English (Native), Spanish (Beginner)</li>
+  </ul>
+</div>
+
+<!-- Back Button -->
+<a href="https://jedleas.github.io/#cv" class="back-button" title="Back to Portfolio">
+  <img src="./images/arrow-up.svg" alt="Back" class="back-button__image"/>
+</a>
+
+</body>
+</html>
