@@ -69,10 +69,12 @@
   .contact-info {
     margin-bottom: 25px;
     font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
   .contact-info span {
-    display: block;
     margin-bottom: 6px;
   }
 
@@ -133,6 +135,10 @@
     p, li {
       font-size: 0.95rem;
     }
+    .contact-info {
+      flex-direction: column;
+      gap: 5px;
+    }
   }
 </style>
 </head>
@@ -141,7 +147,7 @@
 <div class="cv-container">
   <h1>Jed Leas</h1>
   <div class="contact-info">
-    <span>Email: <a href="mailto:jedleas@outlook.com">jedleas@outlook.com</a></span>
+    <span>Email: <a href="mailto:Jedleas@outlook.com">Jedleas@outlook.com</a></span>
     <span>Phone: +44 7774 466054</span>
     <span>LinkedIn: <a href="https://www.linkedin.com/in/jed-leas-716215238/" target="_blank">linkedin.com/in/jed-leas</a></span>
     <span>Portfolio: <a href="https://jedleas.github.io" target="_blank">jedleas.github.io</a></span>
@@ -154,6 +160,8 @@
         <ul>
           <li>Y1 Term 1: Fundamentals of Machine Learning (83%), Economics I (70%), Programming (87%), Mathematics for Economists (88%)</li>
           <li>Y1 Term 2: Statistics for Business & Management (78%), Economics II (66%), Object-Oriented Programming (79%), Computers and the Internet (61%)</li>
+          <li>Y2 Term 1: Software Development, Database Theory and Design, Network and Computer Security</li>
+          <li>Y2 Term 2: Team Project, Microeconomics II, Macroeconomics II</li>
         </ul>
       </li>
       <li><strong>Advanced Placement</strong>, Stamford American International School, Singapore (2022–2024)
@@ -168,7 +176,7 @@
           <li>G11: Spanish SIELE A2 (5), Contemporary English (6)</li>
         </ul>
       </li>
-      <li><strong>Academic Awards</strong>: AP Subject Awards (Microeconomics, CS Principles, CS A, Statistics), Dean’s List (2023, 2024), Certificate of Service (2024)</li>
+      <li><strong>Academic Awards</strong>: AP Subject Awards (Microeconomics, CS Principles, CS A, Statistics), Dean's List (2023, 2024), Certificate of Service (2024)</li>
       <li><strong>SAT</strong> (Nov 2023): 1400 (R&W: 680, Math: 720)</li>
       <li><strong>Imperial College London</strong> (2022): Physics Global Summer School</li>
     </ul>
@@ -178,19 +186,19 @@
     <h2>Experience</h2>
     <ul>
       <li><strong>Skelcore Gym Designer</strong> (2025–Present) – Designed tailored gym floorplans in AutoCAD, selecting equipment aligned with client visions (e.g., bodybuilding, functional fitness). Collaborated with team members on proposals and quotations, delivering professional plans for ~8 gyms within three months.</li>
-      <li><strong>Skelcore Representative</strong>, Skelcore @ FIBO (2024) – Engaged prospective clients at Europe’s largest fitness trade show, providing product demonstrations, answering technical queries, and qualifying leads.</li>
-      <li><strong>Artico (Non-Profit) Website Designer</strong> (2023) – Led a team of 4 in designing an e-commerce site for a ceramics non-profit.</li>
-      <li><strong>Representative</strong>, SneakerLab @ Sneaker Con SEA (2022–2024) – Delivered product demonstrations and engaged with customers at conventions across Southeast Asia.</li>
-      <li><strong>Founder / Tutor</strong>, Calculus Study Group (2023–2024) – Established and led a peer study group for advanced calculus.</li>
-      <li><strong>Joyful Hearts</strong> – Member Chair (2023–2024) – Directed student volunteering supporting elderly care.</li>
+      <li><strong>Skelcore Representative</strong>, Skelcore @ FIBO (2024) – Engaged prospective clients at Europe's largest fitness trade show, providing product demonstrations, answering technical queries, and qualifying leads to hand off to senior sales closers.</li>
+      <li><strong>Artico (Non-Profit) Website Designer</strong> (2023) – Led a team of four in designing an e-commerce website for a ceramics non-profit. Oversaw site layout, and product cataloguing.</li>
+      <li><strong>Representative</strong>, SneakerLab @ Sneaker Con SEA (2022–2024) – Represented SneakerLab at major sneaker conventions in Southeast Asia. Delivered product demonstrations, explained benefits, and drove direct sales through engaging with customers.</li>
+      <li><strong>Founder / Tutor</strong>, Calculus Study Group (2023–2024) – Established a peer study group to support students in advanced calculus. Provided tutoring sessions, improving classmates' understanding of complex concepts.</li>
+      <li><strong>Joyful Hearts</strong> – Member Chair (2023–2024) - Directed student involvement in a volunteer initiative supporting elderly care. Coordinated member schedules, organized visits, and encouraged long-term engagement with the community.</li>
     </ul>
   </div>
 
   <div class="cv-section">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Trade School Live</strong> – Interactive trading simulation platform built in Python, reacting dynamically to real-time economic events and user actions. Accessible via YouTube, Twitch, and TikTok.</li>
-      <li><strong>Stock Tracker</strong> – Automated portfolio tracking app powered by PythonAnywhere, CronJobs, and Pushover. Sends daily notifications and provides a secure web app to log trades and view holdings.</li>
+     <li><strong><a href="https://jedleas.github.io/TradeSchoolLive">Trade School Live</a></strong> - An interactive platform that delivers free trading simulations with real-time macro- and microeconomic events, built entirely from scratch in Python. The simulation reacts dynamically to events triggered every minute and to user actions such as buying and selling stocks. Players trade using virtual currency that resets weekly, with the top five ranked on a public leaderboard. Accessible on almost any device, the experience through Twitch and soon YouTube and TikTok.</li>
+      <li><strong><a href="https://jedleas.github.io/StockTracker"> Stock Tracker</a></strong> - Delivers daily portfolio performance updates straight to my phone at both the opening and closing of the US stock market. Each weekday it sends a notification to my phone showing my total unrealised return, the highest mover of the day, and the overall value of my portfolio. The hosted web app lets me log trades (Password Protected) and view holdings instantly from any device. Powered by PythonAnywhere (hosting), CronJobs (scheduling), and Pushover (notifications).</li>
     </ul>
   </div>
 
@@ -199,15 +207,15 @@
     <ul>
       <li><strong>Competitions</strong>: National Economics & Financial Management Challenge – Finalist (2023)</li>
       <li><strong>Clubs</strong>: Google Developer Student Club Exeter (2024–Present), Student Investment Fund (2024–2025), Interact Club (2020–2024)</li>
-      <li><strong>Academic Societies</strong>: National Honors Society (2023–2024), Economics Honor Society (2022–2024), Physics Honor Society (2023–2024)</li>
-      <li><strong>Charity & Sports</strong>: Self-Trader in Stock Market (2020–Present), Varsity Softball (2023–2024), Relay For Life (2022), Joyful Hearts</li>
+      <li><strong>Academic Societies</strong>: National Honors Society (2023–2024), Economics Honor Society (2022–2024), Physics Honor Society (2023-2024)</li>
+      <li><strong>Charity & Sports</strong>: Self-Trader in Stock Market (2020–Present), Varsity Softball (2023–2024), Relay For Life (2022), Joyful Hearts (2024)</li>
     </ul>
   </div>
 
   <div class="cv-section">
     <h2>Skills & Languages</h2>
     <ul>
-      <li>Python, Scikit-learn, Java, HTML, CSS, JavaScript, Git, Docker</li>
+      <li>Python, Scikit-learn, Java, HTML, CSS, JavaScript, Git, Docker, SQL</li>
       <li>Investing, Blender, DaVinci Resolve, Adobe Photoshop, AutoCAD</li>
       <li>Languages: English (Native), Spanish (Beginner)</li>
     </ul>
