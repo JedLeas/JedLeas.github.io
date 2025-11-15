@@ -32,24 +32,6 @@
       max-width: 800px;
     }
 
-    /* Links */
-    .work__links a {
-      display: inline-block;
-      margin-right: 12px;
-      text-decoration: none;
-      color: var(--pink);
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 6px;
-      background: rgba(255, 50, 88, 0.1);
-      transition: all 0.3s ease;
-    }
-    .work__links a:hover {
-      color: white;
-      background: var(--pink);
-      box-shadow: 0 4px 12px rgba(255, 50, 88, 0.5);
-    }
-
     /* Carousel */
     .carousel {
       position: relative;
@@ -71,7 +53,7 @@
       cursor: pointer;
     }
 
-    /* Click zones */
+    /* click zones for left/right navigation */
     .carousel::before,
     .carousel::after {
       content: "";
@@ -135,6 +117,15 @@
     .back-button:hover {
       transform: scale(1.1);
     }
+
+    /* Stacked Links */
+    .work__links {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
   </style>
 </head>
 <body>
@@ -145,20 +136,20 @@
       An interactive platform that delivers free trading simulations with real-time macro- and microeconomic events, built entirely from scratch in Python. The simulation reacts dynamically to events triggered every minute and to user actions such as buying and selling stocks. Players trade using virtual currency that resets weekly, with the top five ranked on a public leaderboard. Accessible on almost any device, the experience will be available through YouTube, Twitch, and TikTok (Coming Soon).
     </p>
 
-    <!-- Links -->
-    <div class="work__links" style="margin:2rem 0;">
-      <a href="https://www.youtube.com/@TradeSchoolLive" target="_blank">YouTube (To Be Implemented) →</a>
-      <a href="https://www.twitch.tv/tradeschoollive" target="_blank">Twitch →</a>
-      <a href="https://www.tiktok.com/@tradeschoollive" target="_blank">TikTok  (To Be Implemented)→</a>
+    <!-- Stacked Links -->
+    <div class="work__links">
+      <a href="https://www.twitch.tv/tradeschoollive" target="_blank" class="link__text">Twitch <span>&rarr;</span></a>
+      <a href="https://www.youtube.com/@TradeSchoolLive" target="_blank" class="link__text">YouTube (Coming Soon) <span>&rarr;</span></a>
+      <a href="https://www.tiktok.com/@tradeschoollive" target="_blank" class="link__text">TikTok (Coming Soon) <span>&rarr;</span></a>
     </div>
 
     <!-- Carousel -->
     <div class="carousel" id="carousel">
       <div class="carousel-track">
-        <img src="./images/project1-1.png" class="carousel-image" alt="Project Image 1">
-        <img src="./images/project1-2.png" class="carousel-image" alt="Project Image 2">
-        <img src="./images/project1-3.png" class="carousel-image" alt="Project Image 3">
-        <img src="./images/project1-4.png" class="carousel-image" alt="Project Image 4">
+        <img src="./images/project1-1.png" class="carousel-image" alt="Trade School Live Image 1">
+        <img src="./images/project1-2.png" class="carousel-image" alt="Trade School Live Image 2">
+        <img src="./images/project1-3.png" class="carousel-image" alt="Trade School Live Image 3">
+        <img src="./images/project1-4.png" class="carousel-image" alt="Trade School Live Image 4">
       </div>
     </div>
 
