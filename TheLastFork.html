@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Last Fork | Jed Leas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./index.css" /> 
+  <style>
+    body {
+      background: var(--black);
+      color: var(--white-1);
+      font-family: var(--font-stack);
+    }
+
+    .project-container {
+      max-width: 1000px;
+      margin: 6rem auto;
+      padding: 3rem;
+      background: rgba(20,20,20,0.7);
+      border-radius: 1.2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+
+    .project-container h2 {
+      color: var(--white);
+      font-size: var(--font-size-large);
+    }
+
+    .project-container p {
+      font-size: var(--font-size-small);
+      max-width: 800px;
+    }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      margin: 3rem 0;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-image {
+      min-width: 100%;
+      height: 500px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    /* click zones for left/right navigation */
+    .carousel::before,
+    .carousel::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      z-index: 2;
+    }
+    .carousel::before { left: 0; }
+    .carousel::after { right: 0; }
+
+    /* Thumbnails */
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .thumbnail {
+      height: 80px;
+      width: 120px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.3s;
+    }
+
+    .thumbnail.active,
+    .thumbnail:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      border: 2px solid var(--pink);
+    }
+
+    /* Back button */
+    .back-button {
+      position: fixed;
+      bottom: 3rem;
+      left: 3rem;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+      z-index: 50;
+    }
+    .back-button img {
+      width: 28px;
+      height: 28px;
+      filter: invert(1);
+      transform: rotate(-0.25turn);
+    }
+    .back-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Stacked Links */
+    .work__links {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="project-container">
+    <h2>The Last Fork</h2>
+    <p>
+      A full-stack web application connecting restaurants with surplus food to customers at reduced prices, incorporating gamification through leaderboards, badges and environmental impact statistics such as estimated CO₂ saved from landfill. As the team’s DevOps lead, I designed and implemented the CI/CD pipelines for a microservice-based architecture, deploying applications to a Kubernetes (k3s) cluster with automated, zero-downtime rolling deployments, readiness and health checks. Configured supporting infrastructure including PostgreSQL, Apache Kafka, reverse proxying, load balancing, automatic TLS certificate renewal and horizontal scaling. Beyond DevOps, contributed to backend API development, pull request reviews and bug fixes, while developing additional frontend pages and backend endpoints to meet project requirements. Coordinated weekly team meetings for an eight-person team, tracked project progress, and produced comprehensive deployment documentation enabling the entire platform to be deployed to a Linux server, and a development guide which included tips for continued development and common issues and how they were overcome as well as a comprehensive testing guide. 
+    </p>
+
+    <!-- Stacked Links -->
+    <div class="work__links">
+      <a href="https://github.com/Team-Tiger1" target="_blank" class="link__text">Github Orginization holding all repos <span>&rarr;</span></a>
+     
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <img src="https://github.com/Team-Tiger1/.github/raw/main/catalog.PNG" class="carousel-image" alt="The Last Fork Image 1">
+        <img src="https://github.com/Team-Tiger1/.github/raw/main/analytics.PNG" class="carousel-image" alt="The Last Fork Image 2">
+        <img src="./images/Project3-3.png" class="carousel-image" alt="The Last Fork Image 3">
+        <img src="./images/Project3-4.png" class="carousel-image" alt="The Last Fork Image 4">
+      </div>
+    </div>
+
+    
+
+  <!-- Back Button -->
+  <a href="https://jedleas.github.io/#work1" class="back-button" title="Back to Portfolio">
+    <img src="./images/arrow-up.svg" alt="Back"/>
+  </a>
+
+  <script>
+    (function() {
+      const track = document.querySelector('.carousel-track');
+      const images = document.querySelectorAll('.carousel-image');
+      const thumbs = document.querySelectorAll('.thumbnail');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumbs[index].classList.add('active');
+        currentIndex = index;
+      }
+
+      // Thumbnail click
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          const index = parseInt(thumb.dataset.index);
+          showSlide(index);
+        });
+      });
+
+      // Click left/right half
+      const carousel = document.getElementById('carousel');
+      carousel.addEventListener('click', (e) => {
+        const rect = carousel.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        if (x < rect.width / 2) {
+          // left
+          showSlide((currentIndex - 1 + images.length) % images.length);
+        } else {
+          // right
+          showSlide((currentIndex + 1) % images.length);
+        }
+      });
+
+      // Auto-slide every 5s
+      setInterval(() => {
+        showSlide((currentIndex + 1) % images.length);
+      }, 5000);
+
+      showSlide(0);
+    })();
+  </script>
+</body>
+</html>
